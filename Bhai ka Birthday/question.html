@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      background-color: black; /* Black background */
+      color: white; /* White text color */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; /* Full height */
+      margin: 0; /* Remove default margin */
+      font-family: Arial, sans-serif; /* Font style */
+      overflow: hidden; /* Prevent scrollbars from appearing */
+      position: relative; /* Set position relative for the emoji movement */
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column; /* Stack question and options */
+      justify-content: center;
+      align-items: center;
+      transform: translateY(-20px); /* Move content upward */
+      z-index: 1; /* Bring content to front */
+    }
+
+    h1 {
+      margin-bottom: 80px; /* Increased space below the question */
+      font-size: 4.5rem; /* Question text size */
+    }
+
+    .options {
+      display: flex; /* Flexbox for option layout */
+      gap: 80px; /* Increased space between options */
+    }
+
+    .option {
+      padding: 10px 20px; /* Padding for options */
+      background-color: white; /* Background color for options */
+      color: black; /* Text color for options */
+      border: none; /* Remove border */
+      cursor: pointer; /* Pointer cursor on hover */
+      font-size: 1.2rem; /* Option text size */
+      transition: background-color 0.3s; /* Smooth transition for hover effect */
+    }
+
+    .option:hover {
+      background-color: #ccc; /* Change background on hover */
+    }
+
+    .emoji {
+      width: 100px; /* Set width for emoji image */
+      position: absolute; /* Positioning for animation */
+      animation: rectangle 6s linear infinite; /* Rectangular animation */
+      top: calc(50% - 50px); /* Center vertically */
+      left: calc(50% - 50px); /* Center horizontally */
+      transform: translate(-50%, -50%); /* Adjust for centering */
+    }
+
+    @keyframes rectangle {
+      0% {
+        transform: translate(230px, -250px); /* Start at top right */
+      }
+      25% {
+        transform: translate(230px, 250px); /* Move to bottom right */
+      }
+      50% {
+        transform: translate(-230px, 250px); /* Move to bottom left */
+      }
+      75% {
+        transform: translate(-230px, -250px); /* Move to top left */
+      }
+      100% {
+        transform: translate(230px, -250px); /* Back to start */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <h1>So finally <br>Omkar is?</h1>
+    
+    <div class="options">
+      <button class="option" onclick="redirectToBirthday()">Great</button>
+      <button class="option" onclick="redirectToBirthday()">Best</button>
+    </div>
+  </div>
+
+  <img src="./smily1.png" alt="Moving Emoji" class="emoji"> <!-- Moving emoji image -->
+
+  <script>
+    function redirectToBirthday() {
+      window.location.href = 'Birthday.html'; // Redirect to Birthday.html
+    }
+  </script>
+</body>
+</html>

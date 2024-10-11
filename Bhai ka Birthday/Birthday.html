@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Message</title>
+  <style>
+    body {
+      background-color: black; /* Black background */
+      color: white; /* White text color */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; /* Full height */
+      margin: 0; /* Remove default margin */
+      font-family: Arial, sans-serif; /* Font style */
+      font-size: 2rem; /* Text size */
+      text-align: center;
+    }
+
+    .wave span {
+      display: inline-block;
+      margin-right: 5px; /* Add a small gap between letters */
+      animation: wave 1.5s infinite ease-in-out;
+    }
+
+    /* Animation for the wave-like motion */
+    @keyframes wave {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); } /* Wave height */
+    }
+
+    /* Adding specific delays for each letter */
+    .wave span:nth-child(1) { animation-delay: 0s; }
+    .wave span:nth-child(2) { animation-delay: 0.1s; }
+    .wave span:nth-child(3) { animation-delay: 0.2s; }
+    .wave span:nth-child(4) { animation-delay: 0.3s; }
+    .wave span:nth-child(5) { animation-delay: 0.4s; }
+    .wave span:nth-child(6) { animation-delay: 0.5s; }
+    .wave span:nth-child(7) { animation-delay: 0.6s; }
+    .wave span:nth-child(8) { animation-delay: 0.7s; }
+    .wave span:nth-child(9) { animation-delay: 0.8s; }
+    .wave span:nth-child(10) { animation-delay: 0.9s; }
+    .wave span:nth-child(11) { animation-delay: 1s; }
+    .wave span:nth-child(12) { animation-delay: 1.1s; }
+    .wave span:nth-child(13) { animation-delay: 1.2s; }
+    .wave span:nth-child(14) { animation-delay: 1.3s; }
+    .wave span:nth-child(15) { animation-delay: 1.4s; }
+    .wave span:nth-child(16) { animation-delay: 1.5s; }
+    .wave span:nth-child(17) { animation-delay: 1.6s; }
+    .wave span:nth-child(18) { animation-delay: 1.7s; }
+    .wave span:nth-child(19) { animation-delay: 1.8s; }
+    .wave span:nth-child(20) { animation-delay: 1.9s; }
+    .wave span:nth-child(21) { animation-delay: 2s; }
+    .wave span:nth-child(22) { animation-delay: 2.1s; }
+    .wave span:nth-child(23) { animation-delay: 2.2s; }
+    .wave span:nth-child(24) { animation-delay: 2.3s; }
+    .wave span:nth-child(25) { animation-delay: 2.4s; }
+    .wave span:nth-child(26) { animation-delay: 2.5s; }
+    .wave span:nth-child(27) { animation-delay: 2.6s; }
+    .wave span:nth-child(28) { animation-delay: 2.7s; }
+    .wave span:nth-child(29) { animation-delay: 2.8s; }
+    .wave span:nth-child(30) { animation-delay: 2.9s; }
+    .wave span:nth-child(31) { animation-delay: 3s; }
+    .wave span:nth-child(32) { animation-delay: 3.1s; }
+
+    /* Styling for the "Happy Birthday" in blue color */
+    .blue {
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <div class="wave" id="wave-text">
+    <!-- JavaScript will inject the animated text here -->
+  </div>
+
+  <script>
+    const text = "Thank you, Once again wishing you";
+    const happyBirthday = "Happy Birthday!";
+    const container = document.getElementById("wave-text");
+
+    // Wrap each character of the first sentence in a span for wave animation
+    text.split('').forEach((char) => {
+      const span = document.createElement('span');
+      span.textContent = char;
+      container.appendChild(span);
+    });
+
+    // Add space between sentences
+    const space = document.createElement('span');
+    space.textContent = ' ';
+    container.appendChild(space);
+
+    // Wrap each character of "Happy Birthday!" in a span with blue color
+    happyBirthday.split('').forEach((char) => {
+      const span = document.createElement('span');
+      span.textContent = char;
+
+      // Apply blue class to "Happy Birthday"
+      if (char.trim() !== '') {
+        span.classList.add('blue');
+      }
+      container.appendChild(span);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday</title>
+  
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .blue {
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="dancing-text">Happy Birthday <span class="blue">Prajakta</span></h1> <!-- Omkar in blue color -->
+    
+    <!-- Added Question -->
+    <h2 class="question-text">Party Kab Degi?</h2> <!-- New heading for the question -->
+    
+    <div class="images">
+      <img src="./bhai_ka_birthday1.jpg" alt="Image 1" class="tilting-image large-image left-image"> <!-- Left Image -->
+      <img src="./bhai_ka_birthday2.jpg" alt="Image 2" class="tilting-image center-image"> <!-- Center Image -->
+      <img src="./bhai_ka_birthday3.jpg" alt="Image 3" class="tilting-image large-image right-image"> <!-- Right Image -->
+    </div>
+    
+    <div class="buttons">
+      <button class="party-btn" onclick="window.location.href='party.html';">Party Dungi</button>
+      <button class="party-btn">Party Nahi Dungi</button>
+    </div>
+  </div>
+
+  <script>
+    const partyNahiDegaButton = document.querySelector('.party-btn:nth-child(2)');
+    
+    partyNahiDegaButton.addEventListener('mouseenter', () => {
+      // Random position within the viewport
+      const x = Math.random() * (window.innerWidth - partyNahiDegaButton.offsetWidth);
+      const y = Math.random() * (window.innerHeight - partyNahiDegaButton.offsetHeight);
+      
+      // Set the new position
+      partyNahiDegaButton.style.position = 'absolute'; // Ensure it can move freely
+      partyNahiDegaButton.style.left = `${x}px`;
+      partyNahiDegaButton.style.top = `${y}px`;
+    });
+  </script>
+</body>
+</html>
